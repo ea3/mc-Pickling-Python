@@ -37,10 +37,10 @@ odd = list(range(1,10,2))
 
 
 with open("imelda.pickle", "wb") as pickle_file:
-    pickle.dump(imelda, pickle_file)
-    pickle.dump(even, pickle_file)
-    pickle.dump(odd, pickle_file)
-    pickle.dump(2998302, pickle_file)
+    pickle.dump(imelda, pickle_file, protocol=pickle.HIGHEST_PROTOCOL)
+    pickle.dump(even, pickle_file, protocol=0)
+    pickle.dump(odd, pickle_file, protocol=pickle.DEFAULT_PROTOCOL)
+    pickle.dump(2998302, pickle_file, protocol=pickle.DEFAULT_PROTOCOL)
 
 
 with open("imelda.pickle", "rb") as imelda_pickle:
